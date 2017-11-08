@@ -15,6 +15,15 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  resources :stations do
+  end
+
+  resources :addresses do
+    collection do
+      get :suggestion
+    end
+  end
+
   post '/categories/:id', :to => 'categories#recovery'
   post '/categories/:category_id/products/:id', :to => 'products#recovery'
 end
