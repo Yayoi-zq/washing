@@ -6,7 +6,7 @@ class StationsController < ApplicationController
   # GET /stations
   # GET /stations.json
   def index
-    @stations = Station.all  #此处记得修改
+    @stations = current_city.stations  #此处记得修改
   end
 
   # GET /stations/1
@@ -27,7 +27,7 @@ class StationsController < ApplicationController
   # POST /stations
   # POST /stations.json
   def create
-    @station = Station.new(station_params)
+    @station = Station.new(station_params.merge(city: current_city))
 
     respond_to do |format|
       if @station.save
