@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   post '/categories/:category_id/products/:id', :to => 'products#recovery'
 
   mount ActionCable.server => '/cable'
+
+  root to: 'stations#index'
 end
