@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   resources :cities
 
+  resources :couriers
+
   post '/categories/:id', :to => 'categories#recovery'
   post '/categories/:category_id/products/:id', :to => 'products#recovery'
 
